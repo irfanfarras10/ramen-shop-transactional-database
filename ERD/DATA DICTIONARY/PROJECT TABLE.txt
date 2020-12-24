@@ -1,0 +1,62 @@
+Master Table 
+
+MsCustomer
+->CustomerID (CUXXX) (PK)
+->CustomerName
+->CustomerDoB
+->CustomerGender (Female, Male)
+->CustomerAddress (End With Street)
+->CustomerPhoneNumber
+
+MsRamen
+->RamenID (RAXXX) (PK)
+->RamenName (Atleast 2 words)
+->RamenPrice
+
+MsStaff
+->StaffID (STXXX) (PK)
+->StaffName
+->StaffGender (Female, Male)
+->StaffDoB
+->StaffAddress (End With Street)
+->StaffSalary (Between 1500000 and 3500000)
+
+MsSupplier
+->SupplierID (SPXXX) (PK)
+->SupplierName (Between 5 and 50 Character)
+->SupplierAddress (End With Street)
+->SupplierPhoneNumber
+
+MsIngredient
+->IngredientID (RIXXX) (PK)
+->IngredientName
+->IngredientStock
+
+Transaction Table
+
+TrSalesTransaction
+->SalesTransactionID (SLXXX) (PK)
+->StaffID (FK)
+->CustomerID (FK)
+->TransactionDate
+->RamenID (FK)
+->Qty
+
+TrPurchaseTransaction
+->PurchaseTransactionID (PUXXX) (PK)
+->StaffID (FK)
+->SupplierID (FK)
+->TransactionDate
+->IngredientID (FK)
+->Qty
+
+Transaction Detail
+
+TrSalesTransactionDetail
+->CustomerID
+->RamenID
+->Qty
+TrRecipeDetail
+->RamenID (RAXXX) (PK) (FK)
+->IngredientID (PK) (FK)
+->Qty
